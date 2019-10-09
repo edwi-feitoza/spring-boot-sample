@@ -1,0 +1,2 @@
+INSERT INTO USUARIO (username, email, senha, ativo, roles) VALUES ('admin', 'admin@teste.com', '$2a$10$xhWvHpSQmabvMcJrNMN5Cut7qFSHj79mhQVp3kYhpVWj4VPx2MhQu', true, 'ADMIN,USER');
+INSERT INTO USUARIO (username, email, senha, ativo, roles) VALUES ('cliente', 'cliente@teste.com', '$2a$10$xhWvHpSQmabvMcJrNMN5Cut7qFSHj79mhQVp3kYhpVWj4VPx2MhQu', true, 'USER');
