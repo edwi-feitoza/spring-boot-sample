@@ -29,7 +29,7 @@ public class ProdutoServiceImpl implements ProdutoService {
 
     @Override
     public ProdutoDto buscaProduto(Long id) {
-        Produto produto = this.repository.findById(id).orElseThrow(ResourceNotFoundException::new);
+        Produto produto = this.repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Produto de ID [" + id + "] não localizado."));
         return this.convertToDto(produto);
     }
 
@@ -41,7 +41,7 @@ public class ProdutoServiceImpl implements ProdutoService {
 
     @Override
     public ProdutoDto alteraProduto(ProdutoDto dto) {
-        Produto produto = this.repository.findById(dto.getId()).orElseThrow(ResourceNotFoundException::new);
+        Produto produto = this.repository.findById(dto.getId()).orElseThrow(() -> new ResourceNotFoundException("Produto de ID [" + dto.getId() + "]não localizado."));
         produto = this.convertToEntity(dto);
         return this.convertToDto(this.repository.save(produto));
     }
